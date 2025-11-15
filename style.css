@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  background: url('cockatoo-hero.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.section {
+  padding: 100px 15%;
+  border-bottom: 1px solid #333;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  max-width: 800px;
+}
+
+.gallery {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #aaa;
+}
