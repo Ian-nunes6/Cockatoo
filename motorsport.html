@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cockatoo Motorsport</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">COCKATOO</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#motorsport">Motorsport</a></li>
+  </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero hero-motorsport">
+  <div class="hero-text">
+    <h1>Motorsport DNA</h1>
+    <a class="btn" href="#track">Explore</a>
+  </div>
+</div>
+
+<div class="section" id="track">
+  <h2>Track Mode</h2>
+  <p>
+    Pure adrenaline. Zero filters.
+  </p>
+</div>
+
+<div class="footer">© 2025 Cockatoo Edition</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

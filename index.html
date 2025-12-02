@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cockatoo Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">COCKATOO</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="motorsport.html">Motorsport</a></li>
+  </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero hero-home" id="home">
+  <div class="hero-text">
+    <h1>Cockatoo 4.</h1>
+    <a class="btn" href="#more">Discover more</a>
+  </div>
+</div>
+
+<div class="section" id="more">
+  <h2>Born to Stand Out</h2>
+  <p>
+    Inspired by the majestic crest and unapologetic vibe of the Cockatoo.
+  </p>
+
+  <button id="soundBtn">🔊 Sound</button>
+
+  <audio id="exhaustSound">
+    <source src="GT3 rs.opus" type="audio/ogg">
+  </audio>
+</div>
+
+<div class="section" id="gallery">
+  <h2>Gallery</h2>
+  <p>The signature GT3 RS style.</p>
+
+  <div class="gallery">
+    <img src="images/GT3/Side-view-gt3rs.png">
+    <img src="images/GT3/GT3track.png">
+    <img src="images/GT3/GT3 Back.png">
+  </div>
+</div>
+
+<div class="footer">© 2025 Cockatoo Edition</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+document.getElementById("soundBtn").onclick = () => {
+  const snd = document.getElementById("exhaustSound");
+  snd.currentTime = 0;
+  snd.play();
+};
+</script>
+
+</body>
+</html>

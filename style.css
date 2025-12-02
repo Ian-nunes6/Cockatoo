@@ -1,0 +1,205 @@
+/* ------------------------- GLOBAL ------------------------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ------------------------- NAVBAR ------------------------- */
+.navbar {
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.35);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 6px;
+  position: relative;
+  transition: opacity .18s, transform .18s;
+}
+
+/* underline hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width .25s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { opacity: 0.85; transform: translateY(-2px); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px;
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: rgba(0,0,0,0.92);
+    width: 75%;
+    max-width: 330px;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    transition: right .32s cubic-bezier(.2,.9,.2,1);
+    border-radius: 20px 0 0 20px;
+    overflow-y: auto;
+  }
+  .nav-links.show { right: 0; }
+  .hamburger { display: block; }
+}
+
+/* ------------------------- HERO ------------------------- */
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.65);
+  opacity: 0;
+  animation: fadeUp .9s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin: 0 0 18px 0;
+  line-height: 1;
+}
+
+/* Homepage hero */
+.hero-home {
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.25)), 
+                    url("cockatoo-hero.png");
+}
+
+/* Motorsport hero */
+.hero-motorsport {
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.25)), 
+                    url("motorsport-hero.png");
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: transform .18s;
+}
+.btn:hover { transform: translateY(-3px); }
+
+/* ------------------------- SECTIONS ------------------------- */
+.section {
+  padding: 100px 15%;
+  border-bottom: 1px solid #222;
+}
+.section h2 {
+  font-size: 2.6rem;
+  margin: 0 0 16px 0;
+}
+.section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 900px;
+  color: #e9eef6;
+}
+
+/* ------------------------- GALLERY ------------------------- */
+.gallery {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.gallery img {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: .3s;
+}
+.gallery img:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+
+/* ------------------------- FOOTER ------------------------- */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #9aa3b2;
+}
+
+/* ------------------------- RESPONSIVE ------------------------- */
+@media (max-width: 992px) {
+  .hero-text h1 { font-size: 3.6rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 { font-size: 2.8rem; }
+  .section { padding: 60px 8%; }
+  .gallery img { width: 100%; }
+}
